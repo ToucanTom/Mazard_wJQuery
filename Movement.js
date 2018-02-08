@@ -10,8 +10,8 @@ function move() {
     //win condition
     if (row === startingTileRow && col === startingTileCol && currentPlayer.gold >= 25) {
         document.getElementById("win").play();
-        document.getElementById("message").innerHTML = "You win!";
-        document.getElementById("message").style.display = "inline";
+        $("#message").html("You win!").show();
+
     }
 
 //check to see if their is a chest at current location, if not then remove player image only:
@@ -54,10 +54,10 @@ function move() {
     }
     updateStats();
     if(!chest) currentGameBoard[currentPlayer.rowLocation][currentPlayer.colLocation].droppedItem = "";
-    document.getElementById(row + "," + col).innerHTML = "<img src = " + currentPlayer.image + ">";
+    $('#'+row + ',' + col).html("<img src = " + currentPlayer.image + ">");
     clearClickableSettings();
     setOnclickSettings();
-    document.getElementById("deck").onclick = stageTiles;
+    $("#deck").click(stageTiles);
 }
 //move function used as the keydown event listener
 function move2(){
@@ -96,13 +96,12 @@ function move2(){
                 //win condition
                 if (currentPlayer.rowLocation === startingTileRow && currentPlayer.colLocation === startingTileCol && currentPlayer.gold >= 25) {
                     document.getElementById("win").play();
-                    document.getElementById("message").innerHTML = "You win!";
-                    document.getElementById("message").style.display = "inline";
+                    $("#message").html("You win!").show();
                 }
                 document.getElementById(currentPlayer.rowLocation + "," + currentPlayer.colLocation).innerHTML = "<img src=" + currentPlayer.image + ">";
                 clearClickableSettings();
                 setOnclickSettings();
-                document.getElementById("deck").onclick = stageTiles;
+                $("#deck").click(stageTiles);
             }
             break;
         // right 'D'
@@ -125,13 +124,13 @@ function move2(){
                 //win condition
                 if (currentPlayer.rowLocation === startingTileRow && currentPlayer.colLocation === startingTileCol && currentPlayer.gold >= 25) {
                     document.getElementById("win").play();
-                    document.getElementById("message").innerHTML = "You win!";
-                    document.getElementById("message").style.display = "inline";
+                    $("#message").html("You win!").show();
+
                 }
                 document.getElementById(currentPlayer.rowLocation + "," + currentPlayer.colLocation).innerHTML = "<img src=" + currentPlayer.image + ">";
                 clearClickableSettings();
                 setOnclickSettings();
-                document.getElementById("deck").onclick = stageTiles;
+                $("#deck").click(stageTiles);
             }
             break;
         // up ^

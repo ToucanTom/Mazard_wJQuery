@@ -3,7 +3,7 @@
 // *** Note: Add to bottom of list to not change order
 
 var tileObjects = [
-    {
+    {//0
         name: "blankTile",
         image: "Media/blankTile.png",
         north: false,
@@ -11,7 +11,7 @@ var tileObjects = [
         south: false,
         west: false
     },
-    {
+    {//1
         name: "startTile",
         image: "Media/startingTileOriginal.png",
         north: true,
@@ -20,159 +20,148 @@ var tileObjects = [
         west: true
     },
     //1 way
-    {
+    {//2
         name: "north",
         image: "Media/north.png",
         north: true,
         east: false,
         south: false,
         west: false,
-        rotCCW: 3,
-        rotCW: 5
+        rotCW: 3
+
     },
-    {
+    {//3
         name: "east",
         image: "Media/east.png",
         north: false,
         east: true,
         south: false,
         west: false,
-        rotCCW: 4,
-        rotCW: 2
+        rotCW: 4
+
     },
-    {
+    {//4
         name: "south",
         image: "Media/south.png",
         north: false,
         east: false,
         south: true,
         west: false,
-        rotCCW: 5,
-        rotCW: 3
+        rotCW: 5
     },
-    {
+    {//5
         name: "west",
         image: "Media/west.png",
         north: false,
         east: false,
         south: false,
         west: true,
-        rotCCW: 2,
-        rotCW: 4
+        rotCW: 2
+
     },
    //2 way
-    {
+    {//6
         name: "northEast",
         image: "Media/northEast.png",
         north: true,
         east: true,
         south: false,
         west: false,
-        rotCCW: 7,
-        rotCW: 9
+        rotCW: 7
+
     },
-    {
+    {//7
         name: "eastSouth",
         image: "Media/eastSouth.png",
         north: false,
         east: true,
         south: true,
         west: false,
-        rotCCW: 8,
-        rotCW: 6
+        rotCW: 8
     },
-    {
+    {//8
         name: "southWest",
         image: "Media/southWest.png",
         north: false,
         east: false,
         south: true,
         west: true,
-        rotCCW: 9,
-        rotCW: 7
+        rotCW: 9
     },
-    {
+    {//9
         name: "northWest",
         image: "Media/northWest.png",
         north: true,
         east: false,
         south: false,
         west: true,
-        rotCCW: 6,
-        rotCW: 8
+        rotCW: 6
     },
     //straight
-    {
+    {//10
         name: "eastWest",
         image: "Media/eastWest.png",
         north: false,
         east: true,
         south: false,
         west: true,
-        rotCCW: 11,
         rotCW: 11
     },
-    {
+    {//11
         name: "northSouth",
         image: "Media/northSouth.png",
         north: true,
         east: false,
         south: true,
         west: false,
-        rotCCW: 10,
         rotCW: 10
     },
     //3 way
-    {
+    {//12
         name: "northEastSouth",
         image: "Media/northEastSouth.png",
         north: true,
         east: true,
         south: true,
         west: false,
-        rotCCW: 13,
-        rotCW: 15
+        rotCW: 13
     },
-    {
+    {//13
         name: "eastSouthWest",
         image: "Media/eastSouthWest.png",
         north: false,
         east: true,
         south: true,
         west: true,
-        rotCCW: 14,
-        rotCW: 12
+        rotCW: 14
     },
-    {
+    {//14
         name: "northSouthWest",
         image: "Media/northSouthWest.png",
         north: true,
         east: false,
         south: true,
         west: true,
-        rotCCW: 15,
-        rotCW: 13
+        rotCW: 15
     },
-    {
+    {//15
         name: "northEastWest",
         image: "Media/northEastWest.png",
         north: true,
         east: true,
         south: false,
         west: true,
-        rotCCW: 12,
-        rotCW: 14
+        rotCW: 12
     },
     //4 way
-    {
+    {//16
         name: "northEastSouthWest",
         image: "Media/northEastSouthWest.png",
         north: true,
         east: true,
         south: true,
         west: true,
-        rotCCW: 9,
-        rotCW: 9
+        rotCW: 16
     },
     //player images
     {

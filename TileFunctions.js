@@ -81,25 +81,23 @@ function stageTiles() {
     setOnclickSettings();
 }
 function genRotateDivs() {
-    var rotateCWDiv = document.getElementById("rotateCW");
+   /* var rotateCWDiv = document.getElementById("rotateCW");
     var setRotateDiv = document.getElementById("setRotate");
-
     // Display Box
-
     rotateCWDiv.style.display = "inline";
     setRotateDiv.style.display = "inline";
-
     // Display Text in Box
-
     rotateCWDiv.innerHTML = "Rotate Clockwise";
     setRotateDiv.innerHTML = "Set Rotation";
-
     // Set on Click
     rotateCWDiv.onclick = rotateCW;
     setRotateDiv.onclick = setRotation;
+    */
+   $("#rotateCW").show();
+   $("#setRotate").show();
 }
 function rotateCW() {
-    updateGameBoardTileObject(currentTile, tileObjects[currentTile.rotCCW]);
+    updateGameBoardTileObject(currentTile, tileObjects[currentTile.rotCW]);
     document.getElementById(currentTile.location).style.backgroundImage = "url(" + currentTile.image + ")";
 }
 
@@ -107,10 +105,6 @@ function rotateCW() {
 function setRotation() {
 
     // Turn off all rotate options and hide boxes
-    document.getElementById("rotateCW").onclick = "";
-    document.getElementById("rotateCW").onclick = "";
-    document.getElementById("setRotate").onclick = "";
-    document.getElementById("rotateCW").style.display = "none";
     document.getElementById("rotateCW").style.display = "none";
     document.getElementById("setRotate").style.display = "none";
 

@@ -1,3 +1,5 @@
+<!--TODO Fix the Rotation number keys in the model!-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,9 +25,9 @@
     <div id="playerBattleStats">Player Battle Stats</div>
     <div id = "enemyDice">Enemy's Roll</div>
     <div id = "playerDice">Player's Roll</div>
-    <div id = "rollButton">Roll!</div>
+    <div id = "rollButton" onclick="roll()">Roll!</div>
     <div id = "battleResult"></div>
-    <div id = "returnButton">End Battle</div>
+    <div id = "returnButton" onclick="returnFromBattle()">End Battle</div>
 </div>
 <div id = "currentLevel"></div>
 <div id = "player">
@@ -47,8 +49,8 @@
     <div class="playerOptions" onclick = "choosePlayer(playerObjects.Elf)"></div>
 </div>
 <div id = "deck" style = "background-image: url(Media/gameDeck.png)">Click Here </div>
-<div id = "rotateCW"></div>
-<div id = "setRotate"></div>
+<div id = "rotateCW" onclick="rotateCW()">Rotate Tile</div>
+<div id = "setRotate" onclick="setRotation()">Set Tile</div>
 <div id = "newLevel"></div>
 <div id = "resetButton" onclick="location.reload()">Restart Game</div>
 

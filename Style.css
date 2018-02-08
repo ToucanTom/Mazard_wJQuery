@@ -235,17 +235,7 @@ td{
     display: none;
 }
 
-#rotateCW {
-    border: solid black thick;
-    position: absolute;
-    top: 550px;
-    left: 725px;
-    width: 103px;
-    height: 75px;
-    text-align: center;
-    line-height: 37.5px;
-    display: none;
-}
+
 
 #setRotate {
     border: solid black thick;

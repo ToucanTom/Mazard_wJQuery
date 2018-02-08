@@ -1,9 +1,8 @@
 /////////GameBoard generation/////////////////
 function genGameBoard() {
-    document.getElementById("newLevel").style.display = "none";
-    document.getElementById("rotateCW").style.display = "none";
-    document.getElementById("rotateCW").style.display = "none";
-    document.getElementById("setRotate").style.display = "none";
+    $('#newLevel').hide();
+    $('#rotateCW').hide();
+    $('#setRotate').hide();
     tileCountDown = totalTiles-1;
     var gameBoard = document.getElementById("gameBoard");
     var html = "";
@@ -35,13 +34,13 @@ function genGameBoard() {
         currentGameBoard[i] = temp_array;
     }
     gameBoard.innerHTML = html;
-    document.getElementById("currentLevel").innerHTML = "Level " + currentLevel;
+    $("#currentLevel").html( "Level " + currentLevel);
     if (currentLevel === 1) {
         populatePlayerOptions();
     }
     else {
         document.getElementById(currentPlayer.rowLocation+","+currentPlayer.colLocation).innerHTML = "<img src = "+currentPlayer.image+">";
-        document.getElementById("deck").onclick = stageTiles;
+        $("#deck").click(stageTiles);
     }
 
 }
@@ -107,7 +106,7 @@ function setOnclickSettings(){
     var targets = getSurroundingTiles();
     for (var i = 0; i<targets.length; i++){
         if (targets[i].available) {
-            document.getElementById("deck").onclick = stageTiles;
+            $('#deck').click(stageTiles);
         }
         else if(targets[i].staged) {
             document.getElementById(targets[i].location).onclick = flipTile2;
@@ -151,7 +150,7 @@ function updateStats() {
     option[4].style.paddingLeft = "5px";
     option[4].innerHTML = currentPlayer.keys;
     document.getElementById("gold").innerHTML = currentPlayer.gold;
-    if(currentPlayer.hasSword) document.getElementById("sword").style.display = "inline";
+    if(currentPlayer.hasSword) $("#sword").show();
 
 }
 //////////////////////////////

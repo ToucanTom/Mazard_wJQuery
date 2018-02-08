@@ -21,7 +21,6 @@ function genStats(){  //this puts the character information into the overlay to 
         statsLocations[i].innerHTML = html;
     }
 
-
 }
 function choosePlayer(playerChoice) {
     console.log("choosePlayer was called");
@@ -30,9 +29,10 @@ function choosePlayer(playerChoice) {
     currentPlayer.attack = playerChoice.attack;
     currentPlayer.armor = playerChoice.armor;
     currentPlayer.hp = playerChoice.hp;
-    document.getElementById("playerSelect").style.display = "none"; //remove the player select div
-    document.getElementById(currentPlayer.rowLocation+","+currentPlayer.colLocation).innerHTML = "<img src = "+currentPlayer.image+">";
-    document.getElementById("deck").onclick = stageTiles;
+    $("#playerSelect").hide(); //remove the player select div
+    //todo not sure why my jquery version wont work on the below statement.
+    document.getElementById(currentPlayer.rowLocation+","+currentPlayer.colLocation).innerHTML="<img src = "+currentPlayer.image+">";
+    $("#deck").click(stageTiles);
 
     // Visually display characters stats
     updateStats();
