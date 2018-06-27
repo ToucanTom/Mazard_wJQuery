@@ -1,9 +1,5 @@
-
-// Details on all images used as tiles
-// *** Note: Add to bottom of list to not change order
-
-var tileObjects = [
-    {//0
+let tileObjects = [
+    {
         name: "blankTile",
         image: "Media/blankTile.png",
         north: false,
@@ -11,7 +7,7 @@ var tileObjects = [
         south: false,
         west: false
     },
-    {//1
+    {
         name: "startTile",
         image: "Media/startingTileOriginal.png",
         north: true,
@@ -19,8 +15,7 @@ var tileObjects = [
         south: false,
         west: true
     },
-    //1 way
-    {//2
+    {
         name: "north",
         image: "Media/north.png",
         north: true,
@@ -30,7 +25,7 @@ var tileObjects = [
         rotCW: 3
 
     },
-    {//3
+    {
         name: "east",
         image: "Media/east.png",
         north: false,
@@ -40,7 +35,7 @@ var tileObjects = [
         rotCW: 4
 
     },
-    {//4
+    {
         name: "south",
         image: "Media/south.png",
         north: false,
@@ -49,7 +44,7 @@ var tileObjects = [
         west: false,
         rotCW: 5
     },
-    {//5
+    {
         name: "west",
         image: "Media/west.png",
         north: false,
@@ -59,8 +54,7 @@ var tileObjects = [
         rotCW: 2
 
     },
-   //2 way
-    {//6
+    {
         name: "northEast",
         image: "Media/northEast.png",
         north: true,
@@ -70,7 +64,7 @@ var tileObjects = [
         rotCW: 7
 
     },
-    {//7
+    {
         name: "eastSouth",
         image: "Media/eastSouth.png",
         north: false,
@@ -79,7 +73,7 @@ var tileObjects = [
         west: false,
         rotCW: 8
     },
-    {//8
+    {
         name: "southWest",
         image: "Media/southWest.png",
         north: false,
@@ -88,7 +82,7 @@ var tileObjects = [
         west: true,
         rotCW: 9
     },
-    {//9
+    {
         name: "northWest",
         image: "Media/northWest.png",
         north: true,
@@ -97,8 +91,7 @@ var tileObjects = [
         west: true,
         rotCW: 6
     },
-    //straight
-    {//10
+    {
         name: "eastWest",
         image: "Media/eastWest.png",
         north: false,
@@ -107,7 +100,7 @@ var tileObjects = [
         west: true,
         rotCW: 11
     },
-    {//11
+    {
         name: "northSouth",
         image: "Media/northSouth.png",
         north: true,
@@ -116,8 +109,7 @@ var tileObjects = [
         west: false,
         rotCW: 10
     },
-    //3 way
-    {//12
+    {
         name: "northEastSouth",
         image: "Media/northEastSouth.png",
         north: true,
@@ -126,7 +118,7 @@ var tileObjects = [
         west: false,
         rotCW: 13
     },
-    {//13
+    {
         name: "eastSouthWest",
         image: "Media/eastSouthWest.png",
         north: false,
@@ -135,7 +127,7 @@ var tileObjects = [
         west: true,
         rotCW: 14
     },
-    {//14
+    {
         name: "northSouthWest",
         image: "Media/northSouthWest.png",
         north: true,
@@ -144,7 +136,7 @@ var tileObjects = [
         west: true,
         rotCW: 15
     },
-    {//15
+    {
         name: "northEastWest",
         image: "Media/northEastWest.png",
         north: true,
@@ -153,8 +145,7 @@ var tileObjects = [
         west: true,
         rotCW: 12
     },
-    //4 way
-    {//16
+    {
         name: "northEastSouthWest",
         image: "Media/northEastSouthWest.png",
         north: true,
@@ -163,7 +154,6 @@ var tileObjects = [
         west: true,
         rotCW: 16
     },
-    //player images
     {
         name: "human",
         image: "Media/human.png"
@@ -177,8 +167,7 @@ var tileObjects = [
         image: "Media/Dwarf.png"
     }
 ];
-
-var diceOptions = [
+let diceOptions = [
     {
         image: "Media/dieOne.png"
     },
@@ -198,14 +187,11 @@ var diceOptions = [
         image: "Media/dieSix.png"
     }
 ];
-
-// Determines visual game board size
-var gameBoardSize = {
+let gameBoardSize = {
     row: 6,
     col: 6
 };
-/* List of Race Options */
-var playerObjects = {
+let playerObjects = {
     "Human" : {
         image: "Media/pixelKnight.gif",
         race : "Human",
@@ -228,9 +214,8 @@ var playerObjects = {
         armor: 1
     }
 };
-
-var items = {
-    dropRate: 45, // This is a percentage
+let items = {
+    dropRate: 45,
     "bread" : {
         image: "Media/bread.png",
         remaining: 2
@@ -248,9 +233,7 @@ var items = {
         remaining: 1
     }
 };
-
-/* Current Player Object */
-var currentPlayer = {
+let currentPlayer = {
     image: "",
     race: "",
     hp: 0,
@@ -263,7 +246,7 @@ var currentPlayer = {
     colLocation: 0
 
 };
-var currentFoe ={
+let currentFoe ={
     name: "",
     image:"",
     hp: 0,
@@ -273,43 +256,17 @@ var currentFoe ={
     rowLocation: 0,
     colLocation: 0
 };
-var foeOptions = [
+let foeOptions = [
     {name: "Skeleton", hp: 1, armor: 1, attack: 1, gold:1, image: "Media/pixelSkeleton.gif"},
     {name: "Lion", hp:2, armor:2, attack: 2, gold:2,  image: "Media/lion.png"},
     {name: "Knight", hp:3, armor: 3, attack: 1, gold:3, image: "Media/knight.png"}
 ];
-/* This is our global game board
-    Grid Element Data Members:
-        location: (0,0) is top left
-        connected: is this element currently connected to the element your player is on?
-        hasFoe: does it have a foe?
-        foe: foe object
-        staged: is this element staged
-        droppedItem: "(the items name here)"
-
-        blocked: is movement to this element by the player blocked?  <-------- Need to modify:
-            ** this could be true or false depending on which direction you come to the tile from
-            ** Thought: just use the north, east, south, west members of t_object. Set to false if blocked
-
-        available: is this element currently completely unoccupied?
-        t_object {   <--- tile object the element holds
-           image
-           north
-           east
-           south
-           west }
-
-*/
-var currentGameBoard = [];
-
-var startingTileRow = 0;
-var startingTileCol = 0;
-
+let currentGameBoard = [];
+let startingTileRow = 0;
+let startingTileCol = 0;
 function updateGameBoardTileObject(target , template){
     console.log("updateGameBoardTileObject was called");
-
     if (target.north === true || target.east === true || target.south === true || target.west === true) {
-        target.rotCCW = template.rotCCW;
         target.rotCW = template.rotCW;
     }
     target.image = template.image;
@@ -318,37 +275,28 @@ function updateGameBoardTileObject(target , template){
     target.south = template.south;
     target.west = template.west;
 }
-
-var currentTile =  {
+let currentTile =  {
     image: "",
     north: true,
     east: true,
     south: false,
     west: true,
     available: false,
-    location:"0,0",
+    location:"0-0",
     rotCW: 0,
     rotCCW: 0,
     hasFoe: false
 };
-
-/*contains the location of tiles connected to the players current location in #,# format*/
-var currentConnectedTiles = [];
-
-var tileCountDown;
-
-var totalTiles = gameBoardSize.row * gameBoardSize.col;
-
-var currentLevel = 1;
-
-var immobile = false;
-
+let currentConnectedTiles = [];
+let tileCountDown;
+let totalTiles = gameBoardSize.row * gameBoardSize.col;
+let currentLevel = 1;
+let immobile = false;
 function selectRandomTile(directionOfSelectedTile){
-    var filteredTileKeys = [];
-    var index = 0;
-    var i = 0;
+    let filteredTileKeys = [];
+    let index = 0;
+    let i = 0;
     switch (directionOfSelectedTile) {
-        // IF TILE SELECTED IS NORTH OF THE CURRENT TILE OF THE PLAYER
         case "north":
             for (i = 2; i < tileObjects.length; i++) {
                 if (tileObjects[i].south === true) {
@@ -357,7 +305,6 @@ function selectRandomTile(directionOfSelectedTile){
                 }
             }
             break;
-        // IF TILE SELECTED IS EAST OF THE CURRENT TILE OF THE PLAYER
         case "east":
             for (i = 2; i < tileObjects.length; i++) {
                 if (tileObjects[i].west === true) {
@@ -366,7 +313,6 @@ function selectRandomTile(directionOfSelectedTile){
                 }
             }
             break;
-        // IF TILE SELECTED IS SOUTH OF THE CURRENT TILE OF THE PLAYER
         case "south":
             for (i = 2; i < tileObjects.length; i++) {
                 if (tileObjects[i].north === true) {
@@ -375,7 +321,6 @@ function selectRandomTile(directionOfSelectedTile){
                 }
             }
             break;
-        // IF TILE SELECTED IS WEST OF THE CURRENT TILE OF THE PLAYER
         case "west":
             for (i = 2; i < tileObjects.length; i++) {
                 if (tileObjects[i].east === true) {
@@ -385,7 +330,6 @@ function selectRandomTile(directionOfSelectedTile){
             }
             break;
     }
-    var randNum = Math.floor(Math.random() * index);
+    let randNum = Math.floor(Math.random() * index);
     return filteredTileKeys[randNum];
 }
-//var setClickableTiles = [];

@@ -1,71 +1,62 @@
-<!--TODO Fix the Rotation number keys in the model!-->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script type = "text/javascript" src = "Model.js"> </script>
-    <script type = "text/javascript" src = "View.js"></script>
-    <script type = "text/javascript" src = "PlayerSelect.js"></script>
-    <script type = "text/javascript" src = "BattleFunctions.js"></script>
-    <script type = "text/javascript" src = "TileFunctions.js"></script>
-    <script type = "text/javascript" src = "Movement.js"></script>
-    <script type = "text/javascript" src = "Links.js"></script>
-    <script src="jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="Style.css">
+    <script src="Model.js"> </script>
+    <script src="View.js"></script>
+    <script src="PlayerSelect.js"></script>
+    <script src="BattleFunctions.js"></script>
+    <script src="TileFunctions.js"></script>
+    <script src="Movement.js"></script>
+    <script src="Links.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
     <title>Mazard</title>
 </head>
-<body onkeyup="move2()">
-<div id = "message"></div>
-<div id = "newFoe"></div>
-<div id = "battle">
-    <h2>Battle!</h2>
-    <div id = "battleEnemy"></div>
-    <div id = "battlePlayer"></div>
-    <div id ="foeBattleStats">Foe Battle Stats</div>
-    <div id="playerBattleStats">Player Battle Stats</div>
-    <div id = "enemyDice">Enemy's Roll</div>
-    <div id = "playerDice">Player's Roll</div>
-    <div id = "rollButton" onclick="roll()">Roll!</div>
-    <div id = "battleResult"></div>
-    <div id = "returnButton" onclick="returnFromBattle()">End Battle</div>
-</div>
-<div id = "currentLevel"></div>
-<div id = "player">
-    <div class = "playerStats"></div>
-    <div class = "playerStats"></div>
-    <div class = "playerStats"></div>
-    <div class = "playerStats"></div>
-    <div class = "playerStats"></div>
-</div>
-<div id="gold"></div>
-<div id="sword"></div>
-<div id = "homeBase">
-    <table id = "gameBoard">
-    </table>
-</div>
-<div id="playerSelect">
-    <div class="playerOptions" onclick = "choosePlayer(playerObjects.Human)"></div>
-    <div class="playerOptions" onclick = "choosePlayer(playerObjects.Dwarf)"></div>
-    <div class="playerOptions" onclick = "choosePlayer(playerObjects.Elf)"></div>
-</div>
-<div id = "deck" style = "background-image: url(Media/gameDeck.png)">Click Here </div>
-<div id = "rotateCW" onclick="rotateCW()">Rotate Tile</div>
-<div id = "setRotate" onclick="setRotation()">Set Tile</div>
-<div id = "newLevel"></div>
-<div id = "resetButton" onclick="location.reload()">Restart Game</div>
 
-<audio id = "win" > <source src="Media/yahoo.mp3" type="audio/mpeg"></audio>
+<body onkeyup="move2()">
+    <div id="message"></div>
+    <div id="newFoe"></div>
+    <div id="battle">
+        <h2>Battle!</h2>
+        <div id="battleEnemy"></div>
+        <div id="battlePlayer"></div>
+        <div id="foeBattleStats">Foe Battle Stats</div>
+        <div id="playerBattleStats">Player Battle Stats</div>
+        <div id="enemyDice">Enemy's Roll</div>
+        <div id="playerDice">Player's Roll</div>
+        <div id="rollButton" onclick="roll()">Roll!</div>
+        <div id="battleResult"></div>
+        <div id="returnButton" onclick="returnFromBattle()">End Battle</div>
+    </div>
+    <div id="currentLevel"></div>
+    <div id="player">
+        <div class="playerStats"></div>
+        <div class="playerStats"></div>
+        <div class="playerStats"></div>
+        <div class="playerStats"></div>
+        <div class="playerStats"></div>
+    </div>
+    <div id="gold"></div>
+    <div id="sword"></div>
+    <div class="" id="homeBase">
+        <table id="gameBoard">
+        </table>
+    </div>
+    <div id="playerSelect" class="">
+        <div class="playerOptions" onclick="choosePlayer(playerObjects.Human)"></div>
+        <div class="playerOptions" onclick="choosePlayer(playerObjects.Dwarf)"></div>
+        <div class="playerOptions" onclick="choosePlayer(playerObjects.Elf)"></div>
+    </div>
+    <div id="deck" style="background-image: url(Media/gameDeck.png)">Click Here </div>
+    <div id="rotateCW" onclick="rotateCW()">Rotate Tile</div>
+    <div id="setRotate" onclick="setRotation()">Set Tile</div>
+    <div id="newLevel"></div>
+    <div id="resetButton" onclick="location.reload()">Restart Game</div>
+    <audio id="win">
+        <source src="Media/yahoo.mp3" type="audio/mpeg">
+    </audio>
 </body>
 <script>genGameBoard()</script>
-</html>
 
-<!--
- a = front
- e = back
- f = forward
- b= back
- p = previous
- n = mext line
- d = delete
- h = backspace
--->
+</html>

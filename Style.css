@@ -8,15 +8,67 @@ color scheme for mazard
 */
 body {
     background-color:#D4DDF7;
-}
-body{
     align-content: flex-start;
 }
-
+h2 {
+    text-align: center;
+}
+td{
+    border: solid black thin;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+.playerStats {
+    width: 75px;
+    height: 75px;
+    margin-top: 1px;
+    margin-left: 10px;
+    padding-top: 15px;
+    background-repeat: no-repeat;
+    align-content: center;
+    position: relative;
+    font-size: 25px;
+    color: #FE2712;
+}
+.playerOptions{
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 20px;
+    background-repeat: no-repeat;
+    align-content: center;
+    padding-left: 50px;
+    padding-top: 50px;
+    position: relative;
+}
+.overlay {
+    position: absolute;
+    overflow: hidden;
+    bottom: 100%;
+    left: 0;
+    top:0;
+    background-color: #340D09;
+    width: 150px;
+    height: 0;
+    transition: .5s ease;
+}
+.playerOptions:hover .overlay {
+    bottom: 0;
+    height: 100%;
+}
+.playerOptions:hover  #playerOption1Stats{
+    display: inline;
+}
+.playerOptions:hover  #playerOption2Stats{
+    display: inline;
+}
+.playerOptions:hover  #playerOption3Stats{
+    display: inline;
+}
 #homeBase {
     position: relative;
 }
-
 #player {
     border: solid black thick;
     position: absolute;
@@ -28,7 +80,6 @@ body{
     display: inline-flex;
     background-color: #340D09;
 }
-
 #gold{
     height: 120px;
     width: 90px;
@@ -53,27 +104,11 @@ body{
     left: 910px;
     position: absolute;
 }
-.playerStats {
-    width: 75px;
-    height: 75px;
-    margin-top: 1px;
-    margin-left: 10px;
-    padding-top: 15px;
-    background-repeat: no-repeat;
-    align-content: center;
-    position: relative;
-
-    font-size: 25px;
-    color: #FE2712;
-
-}
-
 #gameBoard{
     border: solid black thin;
     border-collapse: collapse;
     position: absolute;
 }
-
 #message {
     width: 50vw;
     height: 50vh;
@@ -86,9 +121,8 @@ body{
     font-size: x-large;
     line-height: 50vh;
     animation-name: newFoeMessage;
-    animation-duration: 4s;
+    animation-duration: 3s;
 }
-
 #newFoe {
     height: 90px;
     width: 90px;
@@ -97,11 +131,9 @@ body{
     margin-top: 55vh;
     display: none;
     animation-name: newFoe;
-    animation-duration: 4s;
+    animation-duration: 3s;
     background-repeat: no-repeat;
 }
-
-
 #battle {
     width: 50vw;
     height: 55vh;
@@ -114,9 +146,6 @@ body{
     border: solid black thick;
     display: none;
 }
-
-h2 { text-align: center;}
-
 #battleEnemy {
     width: 90px;
     height: 90px;
@@ -182,7 +211,6 @@ h2 { text-align: center;}
     position: absolute;
     font-size: medium;
 }
-
 #battleResult {
     width: 150px;
     height: 120px;
@@ -192,7 +220,6 @@ h2 { text-align: center;}
     position: absolute;
     font-size: medium;
 }
-
 #returnButton {
     width: 100px;
     height: 30px;
@@ -205,22 +232,13 @@ h2 { text-align: center;}
     font-size: medium;
     display: none;
 }
-
-td{
-    border: solid black thin;
-    height: 100px;
-    width: 100px;
-    text-align: center;
-}
 #deck{
     border: dashed black medium;
     width: 103px;
     height: 103px;
-
     position: absolute;
     top: 330px;
     left: 725px;
-
     text-align: center;
 }
 #rotateCW {
@@ -234,9 +252,6 @@ td{
     line-height: 37.5px;
     display: none;
 }
-
-
-
 #setRotate {
     border: solid black thick;
     position: absolute;
@@ -248,7 +263,6 @@ td{
     line-height: 37.5px;
     display: none;
 }
-
 #newLevel {
     border: solid black thick;
     position: absolute;
@@ -260,7 +274,6 @@ td{
     line-height: 37.5px;
     display: none;
 }
-
 #resetButton {
     border: solid black thick;
     position: absolute;
@@ -272,7 +285,6 @@ td{
     line-height: 40px;
     display: inline;
 }
-
 #playerSelect {
     position: absolute;
     top: 25px;
@@ -283,7 +295,6 @@ td{
     display: inline-flex;
     background-color: #FE2712;
 }
-
 #currentLevel {
     position: absolute;
     top: 40px;
@@ -293,31 +304,6 @@ td{
     text-align: center;
     line-height: 37.5px;
     font-size: x-large;
-}
-
-.playerOptions{
-    width: 100px;
-    height: 100px;
-    /*border:thin black solid;*/
-    margin-top: 20px;
-    margin-left: 20px;
-    background-repeat: no-repeat;
-    align-content: center;
-    padding-left: 50px;
-    padding-top: 50px;
-    position: relative;
-}
-/*css to make a drop down overlay*/
-.overlay {
-    position: absolute;
-    overflow: hidden;
-    bottom: 100%;
-    left: 0;
-    top:0;
-    background-color: #340D09;
-    width: 150px;
-    height: 0;
-    transition: .5s ease;
 }
 #playerOption1Stats{
     display: none;
@@ -358,27 +344,11 @@ td{
     -ms-transform: translate(-50%, -50%);
     transition: .5s ease;
 }
-.playerOptions:hover .overlay {
-    bottom: 0;
-    height: 100%;
-
-}
-.playerOptions:hover  #playerOption1Stats{
-    display: inline;
-}
-.playerOptions:hover  #playerOption2Stats{
-    display: inline;
-}
-.playerOptions:hover  #playerOption3Stats{
-    display: inline;
-}
-
 @keyframes newFoeMessage {
     0%  {background-color:#D4DDF7; left:-50%;}
     50%  {background-color:teal; left:25%;}
     100% {background-color:green; left:100%;}
 }
-
 @keyframes newFoe {
     0% {left:100%;}
     50% {left: 48%;}
