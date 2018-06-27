@@ -29,6 +29,8 @@ function move() {
   }
   currentPlayer.rowLocation = row;
   currentPlayer.colLocation = col;
+  console.log('drawing PLayer: ');
+  $('#' + row + '-' + col).html('<img src = ' + currentPlayer.image + '>');
   let chest = false;
   switch (
     currentGameBoard[currentPlayer.rowLocation][currentPlayer.colLocation]
@@ -61,7 +63,6 @@ function move() {
       currentPlayer.colLocation
     ].droppedItem =
       '';
-  $('#' + row + '-' + col).html('<img src = ' + currentPlayer.image + '>');
   clearClickableSettings();
   setOnclickSettings();
   $('#deck').click(stageTiles);
@@ -311,4 +312,8 @@ function move2() {
       '';
   currentConnectedTiles = [];
   getSurroundingTiles();
+}
+
+function clearClickableSettings() {
+  $('td').off('click');
 }
